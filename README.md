@@ -8,7 +8,7 @@ Each folder is a new lesson with the source code available and a readme showing 
 
 ## Menu
 
-- [03-basic-scene](https://github.com/Alex-DG/angular-webmail/threejs-journey/main/03-basic-scene)
+- [03-basic-scene](https://github.com/Alex-DG/threejs-journey/tree/main/03-basic-scene)
 
 ## TODO
 
