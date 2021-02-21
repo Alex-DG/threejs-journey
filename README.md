@@ -4,7 +4,7 @@ This is the repository of "my" [ThreeJS Journey](https://threejs-journey.xyz/) f
 
 ## How to use?
 
-Each folder is a new lesson with the source code available and a readme showing a short description explaining about the work done
+Each folder is a new lesson with the source code available and a readme with a short description explaining what has been done.
 
 ## Menu
 
