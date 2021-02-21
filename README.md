@@ -1,6 +1,6 @@
 # ThreeJS Journey
 
-This is the repository of "my" [ThreeJS Journey](https://threejs-journey.xyz/) following the course of [Bruno Simon] 🇫🇷 Creative Developer.
+This is the repository of "my" [ThreeJS Journey](https://threejs-journey.xyz/) following the course of [Bruno Simon](https://twitter.com/bruno_simon) 🇫🇷 Creative Developer.
 
 ## How to use?
 
