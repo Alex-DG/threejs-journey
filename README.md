@@ -10,6 +10,7 @@ Each folder is a new lesson with the source code available and a readme with a s
 
 - [03-basic-scene](https://github.com/Alex-DG/threejs-journey/tree/main/03-basic-scene)
 - [04-webpack](https://github.com/Alex-DG/threejs-journey/tree/main/04-webpack)
+- [05-transforms-objects](https://github.com/Alex-DG/threejs-journey/tree/main/05-transforms-objects)
 
 ## TODO
 
