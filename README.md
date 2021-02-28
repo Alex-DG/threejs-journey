@@ -12,6 +12,7 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [04-webpack](https://github.com/Alex-DG/threejs-journey/tree/main/04-webpack)
 - [05-transforms-objects](https://github.com/Alex-DG/threejs-journey/tree/main/05-transforms-objects)
 - [06-animations](https://github.com/Alex-DG/threejs-journey/tree/main/06-animations)
+- [07-cameras](https://github.com/Alex-DG/threejs-journey/tree/main/07-cameras)
 
 ## TODO
 
