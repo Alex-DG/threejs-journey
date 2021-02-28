@@ -13,7 +13,6 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [05-transforms-objects](https://github.com/Alex-DG/threejs-journey/tree/main/05-transforms-objects)
 - [06-animations](https://github.com/Alex-DG/threejs-journey/tree/main/06-animations)
 - [07-cameras](https://github.com/Alex-DG/threejs-journey/tree/main/07-cameras)
-
-## TODO
-
-- Push lesson result somewhere (vercel)
+- [08-fullscreen-and-resizing](https://github.com/Alex-DG/threejs-journey/tree/main/08-fullscreen-and-resizing)
+- [09-geometries](https://github.com/Alex-DG/threejs-journey/tree/main/09-geometries)
+- [10-debug-ui](https://github.com/Alex-DG/threejs-journey/tree/main/10-debug-ui)
