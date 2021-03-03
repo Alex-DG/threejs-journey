@@ -16,3 +16,4 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [08-fullscreen-and-resizing](https://github.com/Alex-DG/threejs-journey/tree/main/08-fullscreen-and-resizing)
 - [09-geometries](https://github.com/Alex-DG/threejs-journey/tree/main/09-geometries)
 - [10-debug-ui](https://github.com/Alex-DG/threejs-journey/tree/main/10-debug-ui)
+- [11-textures](https://github.com/Alex-DG/threejs-journey/tree/main/11-textures)
