@@ -17,3 +17,5 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [09-geometries](https://github.com/Alex-DG/threejs-journey/tree/main/09-geometries)
 - [10-debug-ui](https://github.com/Alex-DG/threejs-journey/tree/main/10-debug-ui)
 - [11-textures](https://github.com/Alex-DG/threejs-journey/tree/main/11-textures)
+- [12-materials](https://github.com/Alex-DG/threejs-journey/tree/main/12-materials)
+- [13-3d-text](https://github.com/Alex-DG/threejs-journey/tree/main/13-3d-text)
