@@ -8,6 +8,8 @@ Each folder is a new lesson with the source code available and a readme with a s
 
 ## Menu
 
+Basics
+
 - [03-basic-scene](https://github.com/Alex-DG/threejs-journey/tree/main/03-basic-scene)
 - [04-webpack](https://github.com/Alex-DG/threejs-journey/tree/main/04-webpack)
 - [05-transforms-objects](https://github.com/Alex-DG/threejs-journey/tree/main/05-transforms-objects)
@@ -19,3 +21,7 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [11-textures](https://github.com/Alex-DG/threejs-journey/tree/main/11-textures)
 - [12-materials](https://github.com/Alex-DG/threejs-journey/tree/main/12-materials)
 - [13-3d-text](https://github.com/Alex-DG/threejs-journey/tree/main/13-3d-text)
+
+Classic Techniques
+
+- [14-lights](https://github.com/Alex-DG/threejs-journey/tree/main/14-lights)
