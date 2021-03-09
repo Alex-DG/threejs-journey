@@ -26,3 +26,4 @@ Each folder is a new lesson with the source code available and a readme with a s
 
 - [14-lights](https://github.com/Alex-DG/threejs-journey/tree/main/14-lights)
 - [15-shadows](https://github.com/Alex-DG/threejs-journey/tree/main/15-shadows)
+- [16-haunted-house](https://github.com/Alex-DG/threejs-journey/tree/main/16-haunted-house)
