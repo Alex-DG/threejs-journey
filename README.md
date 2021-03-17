@@ -28,3 +28,4 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [15-shadows](https://github.com/Alex-DG/threejs-journey/tree/main/15-shadows)
 - [16-haunted-house](https://github.com/Alex-DG/threejs-journey/tree/main/16-haunted-house)
 - [17-particles](https://github.com/Alex-DG/threejs-journey/tree/main/17-particles)
+- [18-galaxy-generator](https://github.com/Alex-DG/threejs-journey/tree/main/18-galaxy-generator)
