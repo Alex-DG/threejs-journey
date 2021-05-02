@@ -39,7 +39,17 @@ const environmentMapTexture = cubeTextureLoader.load([
  */
 // World
 const world = new CANNON.World()
+
 world.gravity.set(0, -9.82, 0)
+
+// NaiveBroadphase: Tests every Bodies against every other Bodies
+// SAPBroadphase (Sweep and prune broadphase): Tests Bod ies on arbitrary axes during multiples steps.
+// The default broadphase is NaiveBroadphase, and I recommend you to switch to SAPBroadphase. Using this broadphase can eventually generate bugs where a collision doesn't occur, but it's rare, and it involves doing things like moving Bodies very fast.
+world.broadphase = new CANNON.SAPBroadphase(world) // by default every objects on the screen are testing each others
+
+// Even if we use an improved broadphase algorithm, all the Body are tested, even those not moving anymore. We can use a feature called sleep.
+// When the Body speed gets incredibly slow (at a point where you can't see it moving), the Body can fall asleep and won't be tested unless a sufficient force is applied to it by code or if another Body hits it.
+world.allowSleep = true
 
 // Materials
 const defaultMaterial = new CANNON.Material('default')
@@ -175,6 +185,21 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 /**
+ * Sounds
+ */
+const hitSound = new Audio('/sounds/hit.mp3')
+
+const playHitSound = (collision) => {
+  const impactStrength = collision?.contact?.getImpactVelocityAlongNormal()
+
+  if (impactStrength > 1.5) {
+    hitSound.volume = Math.random()
+    hitSound.currentTime = 0 //  // when we call hitSound.play() while the sound is playing, nothing happens because it is already playing
+    hitSound.play()
+  }
+}
+
+/**
  * Utils
  */
 const objectsToUpdate = []
@@ -204,6 +229,10 @@ const createSphere = (radius, position) => {
     material: defaultMaterial,
   })
   body.position.copy(position)
+
+  // Event
+  body.addEventListener('collide', playHitSound)
+
   world.addBody(body)
 
   // Save in objects to update
@@ -240,6 +269,10 @@ const createBox = (width, height, depth, position) => {
     material: defaultMaterial,
   })
   body.position.copy(position)
+
+  // Event
+  body.addEventListener('collide', playHitSound)
+
   world.addBody(body)
 
   // Save in objects
@@ -261,7 +294,6 @@ debugObject.createSphere = () => {
     z: (Math.random() - 0.5) * 3,
   })
 }
-
 gui.add(debugObject, 'createSphere')
 
 debugObject.createBox = () => {
@@ -272,6 +304,19 @@ debugObject.createBox = () => {
   })
 }
 gui.add(debugObject, 'createBox')
+
+// Reset
+debugObject.reset = () => {
+  for (const object of objectsToUpdate) {
+    // Remove body
+    object.body.removeEventListener('collide', playHitSound)
+    world.removeBody(object.body)
+
+    // Remove mesh
+    scene.remove(object.mesh)
+  }
+}
+gui.add(debugObject, 'reset')
 
 /**
  * Animate
