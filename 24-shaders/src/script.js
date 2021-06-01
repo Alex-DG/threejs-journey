@@ -3,8 +3,8 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 
-import vertexShader from './shaders/test/vertex.glsl'
-import fragmentShader from './shaders/test/fragment.glsl'
+import vertexShader from './shaders/test2/vertex.glsl'
+import fragmentShader from './shaders/test2/fragment.glsl'
 
 // Shader types:
 // - vertex: position each vertex of the geometry (attributes, uniform..). We can send data from vertext to fragment = varying
@@ -43,7 +43,18 @@ for (let i = 0; i < count; i++) {
 geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1))
 
 // Material
-const material = new THREE.RawShaderMaterial({
+// const material = new THREE.RawShaderMaterial({
+//   vertexShader,
+//   fragmentShader,
+//   transparent: true, // allow us to play with alpha in the fragment shader <=> vec4(R,G,B, alpha)
+//   uniforms: {
+//     uFrequency: { value: new THREE.Vector2(10, 5) },
+//     uTime: { value: 0 },
+//     uColor: { value: new THREE.Color('orange') },
+//     uTexture: { value: flagTexture },
+//   },
+// })
+const material = new THREE.ShaderMaterial({
   vertexShader,
   fragmentShader,
   transparent: true, // allow us to play with alpha in the fragment shader <=> vec4(R,G,B, alpha)
