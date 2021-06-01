@@ -32,15 +32,42 @@ const textureLoader = new THREE.TextureLoader()
  */
 // Geometry
 const geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
+const count = geometry.attributes.position.count
+const randoms = new Float32Array(count)
+
+for (let i = 0; i < count; i++) {
+  randoms[i] = Math.random()
+}
+
+geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1))
 
 // Material
 const material = new THREE.RawShaderMaterial({
   vertexShader,
   fragmentShader,
+  transparent: true, // allow us to play with alpha in the fragment shader <=> vec4(R,G,B, alpha)
+  uniforms: {
+    uFrequency: { value: new THREE.Vector2(10, 5) },
+    uTime: { value: 0 },
+  },
 })
+
+gui
+  .add(material.uniforms.uFrequency.value, 'x')
+  .min(0)
+  .max(20)
+  .step(0.01)
+  .name('frequencyX')
+gui
+  .add(material.uniforms.uFrequency.value, 'y')
+  .min(0)
+  .max(20)
+  .step(0.01)
+  .name('frequencyY')
 
 // Mesh
 const mesh = new THREE.Mesh(geometry, material)
+mesh.scale.y = 2 / 3
 scene.add(mesh)
 
 /**
@@ -98,6 +125,9 @@ const clock = new THREE.Clock()
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime()
+
+  // Update material
+  material.uniforms.uTime.value = elapsedTime
 
   // Update controls
   controls.update()
