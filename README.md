@@ -42,3 +42,4 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [25-shader-patterns](https://github.com/Alex-DG/threejs-journey/tree/main/25-shader-patterns)
 - [26-raging-sea](https://github.com/Alex-DG/threejs-journey/tree/main/26-raging-sea)
 - [27-animated-galaxy](https://github.com/Alex-DG/threejs-journey/tree/main/27-animated-galaxy)
+- [28-modified-material](https://github.com/Alex-DG/threejs-journey/tree/main/28-modified-material)
