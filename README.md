@@ -44,3 +44,4 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [27-animated-galaxy](https://github.com/Alex-DG/threejs-journey/tree/main/27-animated-galaxy)
 - [28-modified-material](https://github.com/Alex-DG/threejs-journey/tree/main/28-modified-material)
 - [29-post-processing](https://github.com/Alex-DG/threejs-journey/tree/main/29-post-processing)
+- [30-performance-tips](https://github.com/Alex-DG/threejs-journey/tree/main/30-performance-tips)
