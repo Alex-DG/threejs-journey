@@ -13,7 +13,18 @@ const loadingBarElement = document.querySelector(".loading-bar")
 const loadingManager = new THREE.LoadingManager(
   // Loaded
   () => {
-    window.setTimeout(() => {
+    // window.setTimeout(() => {
+    //   gsap.to(overlayMaterial.uniforms.uAlpha, {
+    //     duration: 3,
+    //     value: 0,
+    //     delay: 1,
+    //   })
+
+    //   loadingBarElement.classList.add("ended")
+    //   loadingBarElement.style.transform = ""
+    // }, 500)
+
+    gsap.delayedCall(0.6, () => {
       gsap.to(overlayMaterial.uniforms.uAlpha, {
         duration: 3,
         value: 0,
@@ -22,7 +33,7 @@ const loadingManager = new THREE.LoadingManager(
 
       loadingBarElement.classList.add("ended")
       loadingBarElement.style.transform = ""
-    }, 500)
+    })
   },
 
   // Progress
