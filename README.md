@@ -49,3 +49,4 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [29-post-processing](https://github.com/Alex-DG/threejs-journey/tree/main/29-post-processing)
 - [30-performance-tips](https://github.com/Alex-DG/threejs-journey/tree/main/30-performance-tips)
 - [31-intro-and-loading-progress](https://github.com/Alex-DG/threejs-journey/tree/main/31-intro-and-loading-progress)
+- [32-mixing-html-and-webgl](https://github.com/Alex-DG/threejs-journey/tree/main/32-mixing-html-and-webgl)
