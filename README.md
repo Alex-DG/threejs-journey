@@ -36,6 +36,7 @@ Each folder is a new lesson with the source code available and a readme with a s
 - [20-physics](https://github.com/Alex-DG/threejs-journey/tree/main/20-physics)
 - [21-imported-models](https://github.com/Alex-DG/threejs-journey/tree/main/21-imported-models)
 - [22-custom-models-with-blender](https://github.com/Alex-DG/threejs-journey/tree/main/22-custom-models-with-blender)
+- [23-realistic-render](https://github.com/Alex-DG/threejs-journey/tree/main/23-realistic-render)
 
 :: Shaders ::
 
