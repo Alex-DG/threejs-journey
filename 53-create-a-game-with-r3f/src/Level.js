@@ -11,10 +11,26 @@ THREE.ColorManagement.legacyMode = false
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
 
 // Materials
-const floor1Material = new THREE.MeshStandardMaterial({ color: 'limegreen' })
-const floor2Material = new THREE.MeshStandardMaterial({ color: 'greenyellow' })
-const obstacleMaterial = new THREE.MeshStandardMaterial({ color: 'orangered' })
-const wallMaterial = new THREE.MeshStandardMaterial({ color: 'slategrey' })
+const floor1Material = new THREE.MeshStandardMaterial({
+  color: 'limegreen',
+  metalness: 0,
+  roughness: 0,
+})
+const floor2Material = new THREE.MeshStandardMaterial({
+  color: 'greenyellow',
+  metalness: 0,
+  roughness: 0,
+})
+const obstacleMaterial = new THREE.MeshStandardMaterial({
+  color: 'orangered',
+  metalness: 0,
+  roughness: 1,
+})
+const wallMaterial = new THREE.MeshStandardMaterial({
+  color: 'slategrey',
+  metalness: 0,
+  roughness: 0,
+})
 
 export function BlockStart({ position = [0, 0, 0] }) {
   return (
