@@ -12,7 +12,7 @@ export default function Player() {
   const { rapier, world } = useRapier()
   const rapierWorld = world.raw()
 
-  const [smoothedCameraPosition] = useState(() => new THREE.Vector3())
+  const [smoothedCameraPosition] = useState(() => new THREE.Vector3(10, 10, 10))
   const [smoothedCameraTarget] = useState(() => new THREE.Vector3())
 
   const jump = () => {
@@ -23,7 +23,7 @@ export default function Player() {
     const ray = new rapier.Ray(origin, direction)
     const hit = rapierWorld.castRay(ray, 10, true) // true: makes the floor solid
 
-    if (hit?.toi < 0.15) {
+    if (hit.toi < 0.15) {
       body.current.applyImpulse({ x: 0, y: 0.5, z: 0 })
     }
   }
@@ -79,14 +79,13 @@ export default function Player() {
     /**
      * Camera
      */
-    // camera object position
     const bodyPosition = body.current.translation()
+
     const cameraPosition = new THREE.Vector3()
     cameraPosition.copy(bodyPosition)
     cameraPosition.z += 2.25
     cameraPosition.y += 0.65
 
-    // camera look at
     const cameraTarget = new THREE.Vector3()
     cameraTarget.copy(bodyPosition)
     cameraTarget.y += 0.25
@@ -94,8 +93,8 @@ export default function Player() {
     smoothedCameraPosition.lerp(cameraPosition, 5 * delta)
     smoothedCameraTarget.lerp(cameraTarget, 5 * delta)
 
-    state.camera.position.copy(cameraPosition)
-    state.camera.lookAt(cameraTarget)
+    state.camera.position.copy(smoothedCameraPosition)
+    state.camera.lookAt(smoothedCameraTarget)
   })
 
   return (
