@@ -1,13 +1,19 @@
 import { useKeyboardControls } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { RigidBody, useRapier } from '@react-three/rapier'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import * as THREE from 'three'
 
 export default function Player() {
   const body = useRef()
+
   const [subscribeKeys, getKeys] = useKeyboardControls() // TODO: useKeyboardControls((state) => state.jump)
+
   const { rapier, world } = useRapier()
   const rapierWorld = world.raw()
+
+  const [smoothedCameraPosition] = useState(() => new THREE.Vector3())
+  const [smoothedCameraTarget] = useState(() => new THREE.Vector3())
 
   const jump = () => {
     const origin = body.current.translation()
@@ -17,7 +23,7 @@ export default function Player() {
     const ray = new rapier.Ray(origin, direction)
     const hit = rapierWorld.castRay(ray, 10, true) // true: makes the floor solid
 
-    if (hit.toi < 0.15) {
+    if (hit?.toi < 0.15) {
       body.current.applyImpulse({ x: 0, y: 0.5, z: 0 })
     }
   }
@@ -36,6 +42,9 @@ export default function Player() {
   }, [])
 
   useFrame((state, delta) => {
+    /**
+     * Controls
+     */
     const { forward, backward, leftward, rightward } = getKeys()
 
     const impulse = { x: 0, y: 0, z: 0 }
@@ -66,6 +75,27 @@ export default function Player() {
 
     body.current.applyImpulse(impulse)
     body.current.applyTorqueImpulse(torque)
+
+    /**
+     * Camera
+     */
+    // camera object position
+    const bodyPosition = body.current.translation()
+    const cameraPosition = new THREE.Vector3()
+    cameraPosition.copy(bodyPosition)
+    cameraPosition.z += 2.25
+    cameraPosition.y += 0.65
+
+    // camera look at
+    const cameraTarget = new THREE.Vector3()
+    cameraTarget.copy(bodyPosition)
+    cameraTarget.y += 0.25
+
+    smoothedCameraPosition.lerp(cameraPosition, 5 * delta)
+    smoothedCameraTarget.lerp(cameraTarget, 5 * delta)
+
+    state.camera.position.copy(cameraPosition)
+    state.camera.lookAt(cameraTarget)
   })
 
   return (
