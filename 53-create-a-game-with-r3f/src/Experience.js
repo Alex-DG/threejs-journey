@@ -1,6 +1,6 @@
 import { OrbitControls } from '@react-three/drei'
 import { Debug, Physics } from '@react-three/rapier'
-import Effects, { effectOptions } from './Effects.js'
+import Effects from './Effects.js'
 import { Level } from './Level.js'
 import Lights from './Lights.js'
 import Player from './Player.js'
@@ -9,6 +9,8 @@ import useGame from './stores/useGame.js'
 export default function Experience() {
   const blocksCount = useGame((state) => state.blocksCount)
   const blocksSeed = useGame((state) => state.blocksSeed)
+  const ssr = useGame((state) => state.ssr)
+  const depthField = useGame((state) => state.depthField)
 
   return (
     <>
@@ -23,7 +25,7 @@ export default function Experience() {
         <Player />
       </Physics>
 
-      <Effects {...{ ...effectOptions }} />
+      <Effects {...{ depthField, ssr }} />
     </>
   )
 }

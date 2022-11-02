@@ -1,10 +1,5 @@
 import { SSR, DepthOfField, EffectComposer } from '@react-three/postprocessing'
 
-export const effectOptions = {
-  ssr: false,
-  depthField: false,
-}
-
 export default function Effects({ ssr = false, depthField = false }) {
   if (!ssr && !depthField) return
   return (

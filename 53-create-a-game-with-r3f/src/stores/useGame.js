@@ -8,6 +8,12 @@ export default create(
       blocksSeed: 0,
 
       /**
+       * Effects
+       */
+      ssr: false,
+      depthField: false,
+
+      /**
        * Time
        */
       startTime: 0,
